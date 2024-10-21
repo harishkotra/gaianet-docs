@@ -4,18 +4,19 @@ sidebar_position: 4
 
 # Customizing Your Gaia Node
 
-A key goal of the Gaia project is to enable each individual to create and run his or her own
-agent service node using finetuned LLMs and proprietary knowledge. In all likelihood, 
-you are not going to run a node with the [default](quick-start.md) Phi-3 LLM and Paris guidebook knowledge base.
+A key goal of the Gaia project is to enable each individual to create and run his or her own agent service node using finetuned LLMs and proprietary knowledge. In all likelihood, you are not going to run a node with the [default](quick-start) Llama 3.2 LLM and Paris guidebook knowledge base.
+
 In this chapter, we will discuss ways to customize your node.
 
 ## Pre-set configurations
 
-All the node configuration options, such as LLM settings, vector collection for the knowledge base, and prompts, 
-are all in the `gaianet/config.json` file. You can edit this file directly to use your models and vector collections.
+All the node configuration options, such as LLM settings, vector collection for the knowledge base, and prompts,  are all in the `gaianet/config.json` file. You can edit this file directly to use your models and vector collections.
+
 Or, you can select a different `config.json` when you initialize the node. Just pass in a URL to the `config.json` file 
 in your `gaianet init` command.
+
 We have several pre-set `config.json` files to choose from [in this repo](https://github.com/GaiaNet-AI/node-configs).
+
 For example, the following command initialize a Gaia node with a Llama 3 8B model.
 
 ```
@@ -29,7 +30,11 @@ gaianet init --config https://raw.githubusercontent.com/GaiaNet-AI/node-configs/
 After you have initialized the node, you can still make changes to its configuration by editing the `config.json` file
 directly. But it is easier and safer to use the `gaianet` CLI to make changes.
 
-> You MUST run `gaianet init` again after you make any changes to the node configuration.
+:::note
+
+You MUST run `gaianet init` and `gaianet start` again after you make any changes to the node configuration.
+
+:::
 
 The following command shows the `config.json` fields you can make changes to.
 
@@ -56,7 +61,7 @@ gaianet config \
 
 > The llama 3 8B model requires at least 16GB of RAM.
 
-If none of the published finetuned models are perfect for your use case, you can also finetune your own LLM by following [these guides](../creator-guide/finetune/intro.md). Your Gaia node can run your own finetuned models. 
+If none of the published finetuned models are perfect for your use case, you can also finetune your own LLM by following [these guides](../tutorial/llamacpp). Your Gaia node can run your own finetuned models. 
 
 > The `--chat-url` argument could point to a local file under `$HOME/gaianet` instead of a public URL. That allows you to use a privately trained or finetuned LLM model file.
 
@@ -64,7 +69,7 @@ If none of the published finetuned models are perfect for your use case, you can
 
 A key feature of Gaia is that users can create and deploy proprietary knowledge base on the node to supplement
 the LLM. Each knowledge base is a snapshot file for a vector collection. 
-We encourage you to [create your own knowledge base](../creator-guide/knowledge/concepts.md). But you can also use 
+We encourage you to [create your own knowledge base](../knowledge-bases/how-to). But you can also use 
 ready-made knowledge bases. You will need to do the following.
 
 * specify the URL to the vector collection (i.e., the `snapshot` or `snapshot.tar.gz` file) in the `snapshot` option.
@@ -110,8 +115,7 @@ It introduces the RAG context retrieved from the vector database, which follows 
 
 The `--rag-policy` option specifies where the `rag-prompt` and context should go. 
 By default, its value is `system-message` and it puts the context in the system prompt. 
-But you could also set it to `last-user-message`, which
-puts the `rag-prompt` and context in front of the latest message from the user.
+But you could also set it to `last-user-message`, which puts the `rag-prompt` and context in front of the latest message from the user.
 
 ## Next steps
 
@@ -122,13 +126,14 @@ Remember to re-initialize and re-start the node after you make configuration cha
 # gaianet stop
 
 gaianet init
+
 gaianet start
 ```
 
 Next, you can
 
-* [Create a knowledge base](../creator-guide/knowledge/concepts.md) from your proprietary knowledge or skills.
-* [Finetune](../creator-guide/finetune/intro.md) your own LLM.
+* [Create a knowledge base](../knowledge-bases/how-to) from your proprietary knowledge or skills.
+* [Finetune](../tutorial/llamacpp) your own LLM.
 
 Have fun!
 

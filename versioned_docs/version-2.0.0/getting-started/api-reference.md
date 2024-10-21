@@ -23,7 +23,7 @@ By default, the API responds with a full answer in the HTTP response.
 
 **Request**
 
-```
+```bash
 curl -X POST https://node_id.gaianet.network/v1/chat/completions \
   -H 'accept:application/json' \
   -H 'Content-Type: application/json' \
@@ -42,7 +42,7 @@ Add `"stream":true` in your request to make the API send back partial responses 
 
 **Request:**
 
-```
+```bash
 curl -X POST https://node_id.gaianet.network/v1/chat/completions \
   -H 'accept:application/json' \
   -H 'Content-Type: application/json' \
@@ -52,6 +52,7 @@ curl -X POST https://node_id.gaianet.network/v1/chat/completions \
 **Response:**
 
 ```
+
 data: {"id":"chatcmpl-73a1f57d-185e-42c2-b8a6-ba0bae58f3b4","choices":[{"index":0,"delta":{"role":"assistant","content":"I"},"logprobs":null,"finish_reason":null}],"created":1716381054,"model":"Llama-3-8B-Instruct-262k-Q5_K_M","system_fingerprint":"fp_44709d6fcb","object":"chat.completion.chunk"}
 
 data: {"id":"chatcmpl-73a1f57d-185e-42c2-b8a6-ba0bae58f3b4","choices":[{"index":0,"delta":{"role":"assistant","content":" am"},"logprobs":null,"finish_reason":null}],"created":1716381054,"model":"Llama-3-8B-Instruct-262k-Q5_K_M","system_fingerprint":"fp_44709d6fcb","object":"chat.completion.chunk"}
@@ -67,6 +68,7 @@ data: {"id":"chatcmpl-73a1f57d-185e-42c2-b8a6-ba0bae58f3b4","choices":[{"index":
 data: {"id":"chatcmpl-73a1f57d-185e-42c2-b8a6-ba0bae58f3b4","choices":[{"index":0,"delta":{"role":"assistant","content":"."},"logprobs":null,"finish_reason":null}],"created":1716381055,"model":"Llama-3-8B-Instruct-262k-Q5_K_M","system_fingerprint":"fp_44709d6fcb","object":"chat.completion.chunk"}
 
 data: [DONE]
+
 ```
 
 #### Request body
@@ -98,7 +100,7 @@ The `embeddings` endpoint computes embeddings for user queries or file chunks.
 
 **Request**
 
-```
+```bash
 curl -X POST https://node_id.gaianet.network/v1/embeddings \
     -H 'accept:application/json' \
     -H 'Content-Type: application/json' \
@@ -108,6 +110,7 @@ curl -X POST https://node_id.gaianet.network/v1/embeddings \
 **Response:**
 
 ```
+
 {
     "object": "list",
     "data": [
@@ -149,6 +152,7 @@ curl -X POST https://node_id.gaianet.network/v1/embeddings \
         "total_tokens": 491
     }
 }
+
 ```
 
 ### Retrieve
@@ -157,7 +161,7 @@ The `retrieve` endpoint can retrieve text from the node's vector collection base
 
 **Request:**
 
-```
+```bash
 curl -X POST https://node_id.gaianet.network/v1/retrieve \
     -H 'accept:application/json' \
     -H 'Content-Type: application/json' \
@@ -201,7 +205,7 @@ The `models` endpoint provides the chat and embedding models available on the no
 
 **Request:**
 
-```
+```bash
 curl -X POST https://node_id.gaianet.network/v1/models
 ```
 
@@ -217,7 +221,7 @@ The `info` endpoint provides detailed information about the node.
 
 **Request:**
 
-```
+```bash
 curl -X POST https://node_id.gaianet.network/v1/info
 ```
 

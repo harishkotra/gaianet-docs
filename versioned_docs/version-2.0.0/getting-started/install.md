@@ -4,7 +4,7 @@ sidebar_position: 8
 
 # Install or Update the CLI
 
-The Gaia node utilizes version control from [its source GitHub repo](https://github.com/GaiaNet-AI/gaianet-node). You can check out the GaiaNet node versions from [the releases page](https://github.com/GaiaNet-AI/gaianet-node/releases).
+The Gaia node utilizes version control from [its source GitHub repo](https://github.com/GaiaNet-AI/gaianet-node). You can check out the Gaia node versions from [the releases page](https://github.com/GaiaNet-AI/gaianet-node/releases).
 
 ### Install the latest version of the Gaia node
 
@@ -14,7 +14,7 @@ To install the most recent version of Gaia node, run the following command line.
 curl -sSfL 'https://github.com/GaiaNet-AI/gaianet-node/releases/latest/download/install.sh' | bash
 ```
 
-The GaiaNet node will be installed in your `$HOME/gaianet` folder by default. 
+The Gaia node will be installed in your `$HOME/gaianet` folder by default. 
 
 > If you want to install gaianet in a different directory, you can use `curl -sSfL 'https://github.com/GaiaNet-AI/gaianet-node/releases/latest/download/install.sh' | bash -s --  --base <Full_Path> ` to specify where you want to install GaiaNet. Once you use `--base` to define a different directory, you should always add `--base <Full_Path>` to init and start your node.
 > Here is an example:
@@ -27,9 +27,9 @@ The GaiaNet node will be installed in your `$HOME/gaianet` folder by default.
 > gaianet stop --base $HOME/test
 > ```
 
-### Install the specific version of GaiaNet Node
+### Install the specific version of Gaia Node
 
-If you want to install a particular GaiaNet node version, change the version number in the following command line.
+If you want to install a particular Gaia node version, change the version number in the following command line.
 
 ```
 curl -sSfL 'https://github.com/GaiaNet-AI/gaianet-node/releases/download/0.1.3/install.sh' | bash
@@ -39,7 +39,7 @@ Check out the release log [here](https://github.com/GaiaNet-AI/gaianet-node/rele
 
 ## What's installed
 
-If you install the GaiaNet node in the `$HOME/gaianet` directory by default, you will have the following directories and files after installation:
+If you install the Gaia node in the `$HOME/gaianet` directory by default, you will have the following directories and files after installation:
 
 * The `$HOME/gaianet/bin` directory contains the GaiaNet CLI tool, frpc binary and Qdrant Vector database binary.
 * The `$HOME/gaianet/` directory contains the `llamaedge-api-server.wasm` and `rag-api-server.wasm` for the LLM inference, dashboard (chatbot ui), nodeid.json for the registering your node, and gaianet-domain binary.
@@ -78,4 +78,8 @@ Simply run the following command to upgrade your node.
 curl -sSfL 'https://github.com/GaiaNet-AI/gaianet-node/releases/latest/download/install.sh' | bash -s -- --upgrade
 ```
 
+:::tip
+
 The `upgrade` option will keep your node id.
+
+:::

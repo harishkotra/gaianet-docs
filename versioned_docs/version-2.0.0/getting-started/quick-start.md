@@ -3,7 +3,7 @@ sidebar_position: 2
 ---
 
 # Setting up your own node
-This guide provides the requisite knowledge necessary to quickly get started with installing a GaiaNet node. 
+This guide provides the requisite knowledge necessary to quickly get started with installing a Gaia node. 
 
 ### Prerequisites
 Before you get started, ensure that you have the following on your system:
@@ -18,7 +18,7 @@ Learn more about [system requirements](system-requirements).
 
 ### Installing the node
 
-1.  Use the following command to download the latest version of the GaiaNet node:
+1.  Use the following command to download the latest version of the Gaia node:
 
 ```
 curl -sSfL 'https://github.com/GaiaNet-AI/gaianet-node/releases/latest/download/install.sh' | bash
@@ -27,9 +27,9 @@ curl -sSfL 'https://github.com/GaiaNet-AI/gaianet-node/releases/latest/download/
 2.  Run the command printed on the terminal to set up the environment path, it is started with `source`.
 ![](quick-start.png)
 
-3. Use the following command to initialize the GaiaNet node according to the configuration options 
+3. Use the following command to initialize the Gaia node according to the configuration options 
 in `$HOME/gaianet/config.json`.
-By default, the GaiaNet is initialized with a [Phi-3](https://azure.microsoft.com/en-us/blog/introducing-phi-3-redefining-whats-possible-with-slms/) LLM and a [knowledge base about Paris](https://huggingface.co/datasets/gaianet/paris). 
+By default, the Gaia is initialized with a [Llama 3.2](https://huggingface.co/meta-llama/Llama-3.2-1B-Instruct) LLM and a [knowledge base about Paris](https://huggingface.co/datasets/gaianet/paris). 
 This command could take some time since it will download a very large LLM file.
 
 ```
@@ -52,12 +52,13 @@ gaianet start
 
 - To stop the node: `gaianet stop`
 
-## Next steps
-
-- [Customize](customize.md) your node. You probably do not wish to just run the default Phi-3 model and Paris knowledge base. 
-- [Join the Gaia Protocol](register.md) and join the Gaia protocol network to receive payments.
-- [Ensure Node Reliability](getting-started/advanced-deployment-options/node-reliability.md) the node server to ensure stable service.
-
 ## Video Guide
 
 <iframe width="100%" style={{"aspect-ratio": "16 / 9"}} src="https://www.youtube.com/embed/LVYXtg39t6c?si=8KQapGzm0gKyZR52" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+## Next steps
+
+- [Customize](customize) your node. You probably do not wish to just run the default Phi-3 model and Paris knowledge base. 
+- [Join the Gaia Protocol](register.md) and join the Gaia protocol network to receive payments.
+- [Ensure Node Reliability](./advanced-deployment-options/node-reliability) the node server to ensure stable service.
+

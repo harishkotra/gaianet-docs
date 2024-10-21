@@ -31,7 +31,11 @@ To receive rewards, bind your node and device IDs with a Metamask account using 
 
 After your node has successfully joined the network, it will be displayed in the list of nodes on the Node Page.
 
-**If you are running multiple nodes, you can bind the node IDs and their corresponding device IDs to your MetaMask wallet.**
+:::note
+
+If you are running multiple nodes, you can bind the node IDs and their corresponding device IDs to your MetaMask wallet.
+
+:::
 
 ### Protect your node ID and device ID
 
@@ -40,10 +44,18 @@ The Gaia installer generates a pair of ETH address and keystore and password for
 - The ETH address is your node ID. You will use this ETH address to join the Gaia network.
 - The keystore stores the private key associated with the ETH address encrypted by the password.
 
+:::tip
+
 The `nodeid.json` file is the only proof that your node belongs to you. 
 In many protocol operations, you will need this private key to sign request messages to send to the protocol smart contracts.
 
+:::
+
+:::note
+
 The device ID is only visible to yourself.
+
+:::
 
 ### Select a different domain
 

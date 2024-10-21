@@ -19,7 +19,7 @@ pip install openai
 When you create an OpenAI client using the library, you can pass in the API endpoint point as the `base_url`.
 Remember to append the `/v1` after the host name. You can find a list of publc nodes [here](../nodes.md).
 
-```
+```python
 import openai
 
 client = openai.OpenAI(base_url="https://YOUR-NODE-ID.us.gaianet.network/v1", api_key="")
@@ -34,7 +34,7 @@ export OPENAI_API_BASE=https://YOUR-NODE-ID.us.gaianet.network/v1
 Then, when you make API calls from the `client`, make sure that the `model` is set to the model name
 available on your node.
 
-```
+```python
 response = client.chat.completions.create(
     model="Meta-Llama-3-8B-Instruct-Q5_K_M",
     messages=[
@@ -59,14 +59,14 @@ npm install openai
 ```
 
 Import it into your project as:
-```
+```js
 // Example usage in Node.js
 const OpenAI = require('openai');
 ```
 
 Create an OpenAI client with a custom base URL. Remember to append the `/v1` after the host name.
 
-```
+```js
 const client = new OpenAI({
   baseURL: 'https://YOUR-NODE-ID.us.gaianet.network/v1',
   apiKey: '' // Leave this empty when using Gaia
@@ -74,14 +74,14 @@ const client = new OpenAI({
 ```
 
 Alternatively, you can set an environment variable using `dotenv` in Node.
-```
+```js
 process.env.OPENAI_API_BASE = 'https://YOUR-NODE-ID.us.gaianet.network/v1';
 ```
 
 Then, when you make API calls from the `client`, make sure that the `model` is set to the model name
 available on your node.
 
-```
+```js
 async function callOpenAI() {
   try {
     const response = await client.chat.completions.create({
