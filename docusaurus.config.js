@@ -44,8 +44,19 @@ const config = {
           routeBasePath: '/',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/GaiaNet-AI/docs/edit/main',
+          editUrl: 'https://github.com/GaiaNet-AI/docs/edit/main',
+          lastVersion: 'current',
+          versions: {
+            current: {
+              label: 'Current',
+              path: '',
+            },
+            '2.0.0': {
+              label: '2.0.0 (Next)',
+              path: 'next',
+              banner: 'unreleased',
+            },
+          },
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -161,6 +172,12 @@ const config = {
             label: 'GitHub',
             position: 'right',
           },
+          {
+            type: 'docsVersionDropdown',
+            position: 'right',
+            dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
+            dropdownActiveClassDisabled: true,
+          },
         ],
       },
       footer: {
@@ -199,7 +216,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} GaiaNet. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Gaia. Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,
